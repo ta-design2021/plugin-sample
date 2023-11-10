@@ -36,6 +36,7 @@ package plugin.pluginsample;
     import java.util.Objects;
     import org.bukkit.Bukkit;
     import org.bukkit.Color;
+    import org.bukkit.ChatColor;
     import org.bukkit.FireworkEffect;
     import org.bukkit.FireworkEffect.Type;
     import org.bukkit.World;
@@ -44,6 +45,7 @@ package plugin.pluginsample;
     import org.bukkit.event.EventHandler;
     import org.bukkit.event.Listener;
     import org.bukkit.event.player.PlayerBedEnterEvent;
+    import org.bukkit.event.player.PlayerJoinEvent;
     import org.bukkit.event.player.PlayerToggleSneakEvent;
     import org.bukkit.inventory.ItemStack;
     import org.bukkit.inventory.meta.FireworkMeta;
@@ -124,5 +126,12 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
 
         player.getInventory().setContents(itemStacks);
     }
+
+//    joinイベント
+//    @EventHandler
+//    public void  onPlayerJoin(PlayerJoinEvent e) {
+//        String playerName = e.getPlayer().getName();
+//        e.setJoinMessage(ChatColor.BLUE + "Welcomeback," + playerName + "!!!");
+//    }
 }
 
