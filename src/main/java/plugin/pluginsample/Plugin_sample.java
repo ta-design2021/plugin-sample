@@ -63,6 +63,8 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
 //        numberList.stream()
 //            .filter(number -> number <= 5)
 //            .forEach(System.out::println);
+
+        getCommand("levelup").setExecutor(new LevelUpCommand());
     }
 
     /**
@@ -107,9 +109,10 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
                     // 追加した情報で再設定する。
                     firework.setFireworkMeta(fireworkMeta);
                 } //for
-                Path path = Path.of("fireworks.txt");
-                Files.writeString(path, "たまや〜");
-                player.sendMessage(Files.readString(path));
+//                levelupコマンドでエラーが怒るのでコメントアウト
+//                Path path = Path.of("fireworks.txt");
+//                Files.writeString(path, "たまや〜");
+//                player.sendMessage(Files.readString(path));
             } //if
 
       count ++;
