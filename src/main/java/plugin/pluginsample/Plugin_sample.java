@@ -28,15 +28,11 @@ package plugin.pluginsample;
 //package plugin.sample;
 
     import java.io.IOException;
-    import java.math.BigInteger;
-    import java.nio.file.Files;
-    import java.nio.file.Path;
     import java.util.Arrays;
     import java.util.List;
     import java.util.Objects;
     import org.bukkit.Bukkit;
     import org.bukkit.Color;
-    import org.bukkit.ChatColor;
     import org.bukkit.FireworkEffect;
     import org.bukkit.FireworkEffect.Type;
     import org.bukkit.World;
@@ -45,7 +41,6 @@ package plugin.pluginsample;
     import org.bukkit.event.EventHandler;
     import org.bukkit.event.Listener;
     import org.bukkit.event.player.PlayerBedEnterEvent;
-    import org.bukkit.event.player.PlayerJoinEvent;
     import org.bukkit.event.player.PlayerToggleSneakEvent;
     import org.bukkit.inventory.ItemStack;
     import org.bukkit.inventory.meta.FireworkMeta;
@@ -64,7 +59,10 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
 //            .filter(number -> number <= 5)
 //            .forEach(System.out::println);
 
-        getCommand("levelup").setExecutor(new LevelUpCommand());
+//        levelupの時の書き方
+//        getCommand("levelup").setExecutor(new SetLevelCommand());
+//        コマンド拡張した時の書き方（setLevel）
+        getCommand("setLevel").setExecutor(new SetLevelCommand());
     }
 
     /**
