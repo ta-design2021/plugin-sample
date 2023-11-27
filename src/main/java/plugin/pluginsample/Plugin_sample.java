@@ -1,31 +1,4 @@
 package plugin.pluginsample;
-//
-//import org.bukkit.Bukkit;
-//import org.bukkit.FireworkEffect;
-//import org.bukkit.FireworkEffect.Type;
-//import org.bukkit.World;
-//import org.bukkit.entity.Firework;
-//import org.bukkit.entity.Player;
-//import org.bukkit.event.EventHandler;
-//import org.bukkit.event.player.PlayerToggleSneakEvent;
-//import org.bukkit.inventory.meta.FireworkMeta;
-//import org.bukkit.plugin.java.JavaPlugin;
-
-//　public final class Plugin_sample extends JavaPlugin {
-//
-//    @Override
-//    public void onEnable() {
-//        // Plugin startup logic
-//
-//    }
-//
-//    @Override
-//    public void onDisable() {
-//        // Plugin shutdown logic
-//    }
-//}
-
-//package plugin.sample;
 
     import java.io.IOException;
     import java.util.Arrays;
@@ -54,15 +27,8 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(this, this);
 
-//        List<Integer> numberList = List.of(1,2,3,4,5,6,7,8,9,10);
-//        numberList.stream()
-//            .filter(number -> number <= 5)
-//            .forEach(System.out::println);
-
-//        levelupの時の書き方
-//        getCommand("levelup").setExecutor(new SetLevelCommand());
-//        コマンド拡張した時の書き方（setLevel）
         getCommand("setLevel").setExecutor(new SetLevelCommand());
+        getCommand("allSetLevel").setExecutor(new AllSetLevelCommand());
     }
 
     /**
@@ -75,9 +41,6 @@ public final class Plugin_sample extends JavaPlugin implements Listener {
         // イベント発生時のプレイヤーやワールドなどの情報を変数に持つ。
         Player player = e.getPlayer();
         World world = player.getWorld();
-
-        // BigInteger型の val を定義
-        //  BigInteger val = new BigInteger(Integer.toString(count));
 
         List<Color> colorList = List.of(Color.RED, Color.BLUE, Color.YELLOW,Color.GREEN);
 //        if(val.isProbablePrime(1)) {
